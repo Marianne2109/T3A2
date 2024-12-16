@@ -1,14 +1,16 @@
 # T3A2 - Fullstack MERN application. 
+For the final project I've decided to create BabyLog, this is a tracking application created for parents and carers as a simple tool to track Growth metrics and Immunisation status. 
 
 ## Links
-- GitHub repo:
-- Trello board:
+- [GitHub repo](https://github.com/Marianne2109/T3A2)
+- [Trello board](https://trello.com/b/wJwPDaGl/babylog-fullstack-app)
+- [Figma Wireframes](https://www.figma.com/design/icsxrgbsIblEOglIf1Nhcn/Wireframes---T3A2?node-id=0-1&p=f&t=ZDhaSZG3SpZxlUK4-0)
 
 ## Table of content 
 
 ## R1. Description of the website
 ### Purpose
-BabyLog is a digital tool for parents and carers to manage, view and track key information about children's growth metrics and immunisation status. The focus is on simplifying the process of recording and tracking growth and immunisation data, providing easy to understand educational resources as well as offering practical tools to promote actions that can improve a child's wellbeing.  BabyLog aims to support those providing caregiving responsibilities, ultimately empowering them with knowledge and handy tools.
+BabyLog is a digital tool for parents and carers to manage, view and track key information about children's growth metrics and immunisation status. The focus is on simplifying the process of recording and tracking growth and immunisation data, providing easy to understand educational resources as well as offering practical tools to promote actions that can improve a child's wellbeing such a create a reminder of upcoming vaccination dates.  BabyLog aims to support those providing caregiving responsibilities, ultimately empowering all user with knowledge and handy tools.
 
 ### Features and Functionality
 #### Features:
@@ -16,9 +18,10 @@ BabyLog is a digital tool for parents and carers to manage, view and track key i
 * Child/children profile: user can create and manage multiple children’s profiles under one account. A child profile will include personal information such as name, date of birth, expected due date and the option to add notes and a profile picture.
 * Caregiving roles: For those providing care, parents can grant access to the child profile providing that the carer has created an account with BabyLog. The parent will provide access to the data at their discretion (read only or full access).
 * Growth tracking: the growth metrics recorded are height, weight and head circumference (head size). The data entered can be visualised as a list or as a graph. Based on the World’s Health Organisation growth standards.
-* Immunisation tracking: logging vaccines and notification of upcoming or late vaccines following the Australian National Immunisation Program (NIP) schedule.
+* Immunisation tracking: logging vaccines and notification of upcoming or late vaccines following the Australian National Immunisation Program (NIP) schedule. This includes creation of reminders that will be sent to the users calendar provider (ex. Google Calendar).
 * Notes: The child’s profile will include a section for users to enter additional information about the child or notes from a doctor's appointment. 
-* Important numbers page: this page will contain emergency numbers and the number of relevant healthcare related organizations such as Nurse on call. This page will have the option to download the list for printing or sharing. * Educational resources: It will include general information on the importance of immunisation, vaccine benefits and potential side effects. Content will be sourced from reliable institutions and organisations like the WHO, the Australian Institute of Health and Welfare (AIHW), and the Department of Health and Aged Care.
+* Important numbers page: this page will contain emergency numbers and the number of relevant healthcare related organizations such as Nurse on call. This page will have the option to download the list for printing or sharing.
+* Educational resources: It will include general information on the importance of immunisation, vaccine benefits and potential side effects as well as information about the importance of Growth metrics. the Content will be sourced from reliable institutions and organisations like the WHO, the Australian Institute of Health and Welfare (AIHW), and the Department of Health and Aged Care.
 * Access and Permissions: The main user (the user entering the child’s data) can grant access to carers or others using the app. The other person must have created an account first.
 * Secured data storage: the data will be stored in the database ensuring privacy compliance. 
 
@@ -53,17 +56,39 @@ By offering clear and simple educational information, the app can become a helpf
   * Mongoose
   * Dotenv
   * Bcrypt
-  * Node-schedule
   * Chart.js
 * **Project management**:
   * Trello
 * **Other tools**:
   * Canva
   * Figma
- 
-  ## R2. Dataflow Diagram
 
-  ## R3. Application Architecture Diagram
+## Design choices
+As part of the design process, I created a mood board with a collection of designs and colour to reflect the idea I am going for. 
+
+![Mood board screenshot](https://github.com/Marianne2109/T3A2/blob/main/docs/Design/Mood%20board.png)
+
+
+The focus of the application is to have a simple to use and navigate application, that is minimalist and neurodivergent friendly. For this reason I decided for a colour palette with mutted tones and earthy colours that are less overstimulating. 
+
+![Colour palette](https://github.com/Marianne2109/T3A2/blob/main/docs/Design/Colour%20scheme.png)
+
+## R2. Dataflow Diagram
+The dataflow diagram was created using the Gane and Sarson notations.
+
+![Image of the applications Data flow diagram](https://github.com/Marianne2109/T3A2/blob/main/docs/Diagrams/DFD.png)
+
+## R3. Application Architecture Diagram
+
+![image of the application architecture diagram](https://github.com/Marianne2109/T3A2/blob/main/docs/Diagrams/Architecture%20Diagram.png)
+
+The frontend or client side is built using React.js. When the client performs an action and interacts with the browser, the frontend connects with the backend using HTTP requests. React sends an HTTP request to the backend and retrieves data from an API. React processes the response and updates the web browser according to the data returned by Express. 
+
+In the backend or server side, at this level the technologies used are Express.js built on top of Node.js. Express simplifies the process of building the API’s and it’s responsible for URL routing, handling HTTP requests and responses; Node.js provides the runtime
+
+For the Database, MongoDB or MongoDB Atlas is used to store data in a document based structure. The tool required to connect MongoDB to Node.js is Mongoose.
+
+The user interacts with the browser, React creates a JSON document that is sent to the Express.js server as a HTTP request. Express sends the document to MongoDB to store for future retrieval.
 
 ## R4. User Stories:
 #### First Stage - User Personas
@@ -73,9 +98,9 @@ By offering clear and simple educational information, the app can become a helpf
  3. Rob - The busy Dad
  4. Isabel - The helpful Nan
 
-![Image of user persona 1 and 2](https://github.com/Marianne2109/T3A2/blob/main/docs/User%20Persona%201-2.png)
+![Image of user persona 1 and 2](https://github.com/Marianne2109/T3A2/blob/main/docs/User%20personas/User%20Persona%201-2.png)
 
-![Image of user persona 3 and 4](https://github.com/Marianne2109/T3A2/blob/main/docs/User%20Persona%203-4.png)
+![Image of user persona 3 and 4](https://github.com/Marianne2109/T3A2/blob/main/docs/User%20personas/User%20Persona%203-4.png)
 
 #### Second Stage - User Stories
   The second Stage was to create the first iteration of the User Stories for these User Personas
@@ -130,6 +155,92 @@ By offering clear and simple educational information, the app can become a helpf
     I want to be able to see when the next vaccination is due so I can offer to help my daughter
 
 
-  ## Wireframes for multiple standard screen sizes, created using industry standard software
+## R5. Wireframes for multiple standard screen sizes, created using industry standard software
 
-  ## Screenshot of Trello (or similar kanban system) board throughout the duration of the project
+### Mobile
+
+![Mobile wireframes](https://github.com/Marianne2109/T3A2/blob/main/docs/Wireframes/Mobile%201.png)
+
+
+![Mobile wireframes](https://github.com/Marianne2109/T3A2/blob/main/docs/Wireframes/Mobile%202.png)
+
+
+![Mobile wireframes](https://github.com/Marianne2109/T3A2/blob/main/docs/Wireframes/Mobile%203.png)
+
+
+![Mobile wireframes](https://github.com/Marianne2109/T3A2/blob/main/docs/Wireframes/Mobile%204.png)
+
+
+![Mobile wireframes](https://github.com/Marianne2109/T3A2/blob/main/docs/Wireframes/Mobile%205.png)
+
+
+![Mobile wireframes](https://github.com/Marianne2109/T3A2/blob/main/docs/Wireframes/Mobile%206.png)
+
+
+![Mobile wireframes](https://github.com/Marianne2109/T3A2/blob/main/docs/Wireframes/Mobile%207.png)
+
+
+
+### Desktop
+
+![Desktop wireframes](https://github.com/Marianne2109/T3A2/blob/main/docs/Wireframes/Desktop%201.png)
+
+
+![Desktop wireframes](https://github.com/Marianne2109/T3A2/blob/main/docs/Wireframes/Desktop%202.png)
+
+
+![Desktop wireframes](https://github.com/Marianne2109/T3A2/blob/main/docs/Wireframes/Desktop%203.png)
+
+
+![Desktop wireframes](https://github.com/Marianne2109/T3A2/blob/main/docs/Wireframes/Desktop%204.png)
+
+
+![Desktop wireframes](https://github.com/Marianne2109/T3A2/blob/main/docs/Wireframes/Desktop%205.png)
+
+
+![Desktop wireframes](https://github.com/Marianne2109/T3A2/blob/main/docs/Wireframes/Desktop%206.png)
+
+
+![Desktop wireframes](https://github.com/Marianne2109/T3A2/blob/main/docs/Wireframes/Desktop%207.png)
+
+
+## R6. Screenshot of Trello (or similar kanban system) board throughout the duration of the project
+The images below show the progress in the trello board for the project. I decided to keep a simple approach to the trello board, because it's what works best for me personally, it was still the only method I used as a Project management tool. While I decided not to use additional features such as set reminders or labels, I am familiar with the additional enhanced options offered by Trello. Because I'm working solo, I felt like having a more intricated board was more time consuming in this instance. 
+
+![Trello Board screenshots](https://github.com/Marianne2109/T3A2/blob/main/docs/Trello/Trello%201.png)
+
+
+![Trello Board screenshots](https://github.com/Marianne2109/T3A2/blob/main/docs/Trello/Trello%202.png)
+
+
+![Trello Board screenshots](https://github.com/Marianne2109/T3A2/blob/main/docs/Trello/Trello%203.png)
+
+
+![Trello Board screenshots](https://github.com/Marianne2109/T3A2/blob/main/docs/Trello/Trello%204.png)
+
+
+![Trello Board screenshots](https://github.com/Marianne2109/T3A2/blob/main/docs/Trello/Trello%205.png)
+
+
+![Trello Board screenshots](https://github.com/Marianne2109/T3A2/blob/main/docs/Trello/Trello%206.png)
+
+
+![Trello Board screenshots](https://github.com/Marianne2109/T3A2/blob/main/docs/Trello/Trello%207.png)
+
+
+![Trello Board screenshots](https://github.com/Marianne2109/T3A2/blob/main/docs/Trello/Trello%208.png)
+
+
+![Trello Board screenshots](https://github.com/Marianne2109/T3A2/blob/main/docs/Trello/Trello%209.png)
+
+
+![Trello Board screenshots](https://github.com/Marianne2109/T3A2/blob/main/docs/Trello/Trello%2010.png)
+
+
+![Trello Board screenshots](https://github.com/Marianne2109/T3A2/blob/main/docs/Trello/Trello%2011.png)
+
+
+![Trello Board screenshots](https://github.com/Marianne2109/T3A2/blob/main/docs/Trello/Trello%2012.png)
+
+
+![Trello Board screenshots](https://github.com/Marianne2109/T3A2/blob/main/docs/Trello/Trello%2013.png)
